@@ -1,0 +1,11 @@
+{
+  "appId": "com.pulserift.game",
+  "appName": "Pulse Rift",
+  "webDir": "www",
+  "backgroundColor": "#05010f",
+  "android": { "allowMixedContent": false },
+  "ios": { "contentInset": "never" },
+  "plugins": {
+    "SplashScreen": { "launchShowDuration": 0, "backgroundColor": "#05010f" }
+  }
+}

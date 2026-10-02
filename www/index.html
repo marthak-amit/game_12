@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#05010f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Pulse Rift</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <div id="stage"></div>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <button id="btnPause" class="icon-btn" aria-label="Pause">❚❚</button>
+    <div class="hud-center">
+      <div id="score">0</div>
+      <div id="mult" class="mult">x1</div>
+    </div>
+    <div class="hud-right"><span class="gem">◆</span> <span id="runShards">0</span></div>
+    <div id="popups"></div>
+    <div id="banner"></div>
+    <div id="energyWrap">
+      <div id="energyLabel">HOLD = PHASE</div>
+      <div id="energyBar"><div id="energyFill"></div></div>
+    </div>
+  </div>
+  <div id="hint" class="hidden"></div>
+
+  <!-- HOME -->
+  <section id="home" class="screen">
+    <div class="topbar">
+      <div class="chip"><span class="gem">◆</span> <b id="homeShards">0</b></div>
+      <button id="btnSettings" class="icon-btn" aria-label="Settings">⚙</button>
+    </div>
+    <div class="title-block">
+      <div class="logo">PULSE<span>RIFT</span></div>
+      <div class="tag">Ride the beat. Bend gravity. Phase through walls.</div>
+    </div>
+    <div class="home-bottom">
+      <button id="btnPlay" class="btn primary huge">PLAY</button>
+      <div class="row3">
+        <button id="btnDaily" class="btn ghost"><span>🎁</span><small>Daily</small><i id="dailyDot" class="dot hidden"></i></button>
+        <button id="btnMissions" class="btn ghost"><span>🎯</span><small>Missions</small><i id="missionDot" class="dot hidden"></i></button>
+        <button id="btnShop" class="btn ghost"><span>🛒</span><small>Shop</small></button>
+      </div>
+      <div class="best">BEST <b id="homeBest">0</b></div>
+    </div>
+  </section>
+
+  <!-- GAME OVER -->
+  <section id="over" class="screen hidden">
+    <div class="panel">
+      <h2 id="overTitle">RIFT COLLAPSED</h2>
+      <div id="newBest" class="newbest hidden">★ NEW BEST ★</div>
+      <div class="big" id="overScore">0</div>
+      <div class="stats">
+        <div><small>Best</small><b id="overBest">0</b></div>
+        <div><small>Shards</small><b id="overShards">0</b></div>
+        <div><small>Max combo</small><b id="overCombo">x1</b></div>
+      </div>
+      <button id="btnRevive" class="btn reward">▶ Watch ad to CONTINUE</button>
+      <button id="btnDouble" class="btn reward">▶ Watch ad: DOUBLE shards</button>
+      <button id="btnRetry" class="btn primary">PLAY AGAIN</button>
+      <button id="btnHome" class="btn ghost wide">Home</button>
+    </div>
+  </section>
+
+  <!-- PAUSE -->
+  <section id="pause" class="screen hidden">
+    <div class="panel">
+      <h2>PAUSED</h2>
+      <button id="btnResume" class="btn primary">RESUME</button>
+      <button id="btnQuit" class="btn ghost wide">Quit run</button>
+    </div>
+  </section>
+
+  <!-- MODAL (shop / missions / daily / settings) -->
+  <section id="modal" class="screen hidden">
+    <div class="panel tall">
+      <div class="modal-head"><h2 id="modalTitle"></h2><button id="modalClose" class="icon-btn">✕</button></div>
+      <div id="modalBody"></div>
+    </div>
+  </section>
+
+  <div id="toast"></div>
+  <div id="adOverlay" class="hidden">
+    <div class="adbox">
+      <div class="adtag">AD</div>
+      <div id="adText">Ad</div>
+      <div class="adfake">Demo ad placeholder — real ads appear in the mobile app build.</div>
+      <button id="adClose" class="btn primary" disabled>…</button>
+    </div>
+  </div>
+  <div id="loading"><div class="logo">PULSE<span>RIFT</span></div><div class="spin"></div></div>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
