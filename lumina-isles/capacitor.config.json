@@ -1,0 +1,9 @@
+{
+  "appId": "com.luminaisles.game",
+  "appName": "Lumina Isles",
+  "webDir": "www",
+  "backgroundColor": "#0b1030",
+  "android": { "allowMixedContent": false },
+  "ios": { "contentInset": "never" },
+  "plugins": { "SplashScreen": { "launchShowDuration": 0, "backgroundColor": "#0b1030" } }
+}

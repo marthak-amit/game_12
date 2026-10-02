@@ -1,4 +1,4 @@
-name: Android debug APK
+name: Android debug APKs
 on:
   workflow_dispatch:
   push:
@@ -6,6 +6,13 @@ on:
 jobs:
   apk:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        app: [pulse-rift, lumina-isles]
+    defaults:
+      run:
+        working-directory: ${{ matrix.app }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -21,5 +28,5 @@ jobs:
       - run: cd android && ./gradlew assembleDebug
       - uses: actions/upload-artifact@v4
         with:
-          name: pulse-rift-debug-apk
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+          name: ${{ matrix.app }}-debug-apk
+          path: ${{ matrix.app }}/android/app/build/outputs/apk/debug/app-debug.apk

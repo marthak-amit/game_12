@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#0b1030">
+<title>Lumina Isles</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <div id="stage"></div>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <button id="btnMenu" class="icon-btn" aria-label="Menu">☰</button>
+    <div class="hud-center">
+      <div id="lvlTitle">Level 1</div>
+      <div class="hud-sub"><span>Moves <b id="moves">0</b></span><span class="sep">·</span><span>Par <b id="par">1</b></span></div>
+      <div id="starRow" class="stars"><i>★</i><i>★</i><i>★</i></div>
+    </div>
+    <div class="hud-right chip"><span class="gem">◆</span> <b id="hudGems">0</b></div>
+    <div id="tip" class="hidden"></div>
+    <div id="hudBottom">
+      <button id="btnRestart" class="round" aria-label="Restart"><span>↺</span><small>Reset</small></button>
+      <button id="btnHint" class="round hint" aria-label="Hint"><span>💡</span><small id="hintLbl">Hint</small></button>
+      <button id="btnSkip" class="round" aria-label="Skip level"><span>⏭</span><small>Skip</small></button>
+    </div>
+  </div>
+
+  <!-- HOME -->
+  <section id="home" class="screen">
+    <div class="topbar">
+      <div class="chip"><span class="gem">◆</span> <b id="homeGems">0</b></div>
+      <div class="chip star-chip">★ <b id="homeStars">0</b></div>
+      <button id="btnSettings" class="icon-btn" aria-label="Settings">⚙</button>
+    </div>
+    <div class="title-block">
+      <div class="logo">LUMINA<span>ISLES</span></div>
+      <div class="tag">Bend light. Wake the floating islands.</div>
+    </div>
+    <div class="home-bottom">
+      <button id="btnPlay" class="btn primary huge">PLAY <small id="playLvl">Level 1</small></button>
+      <div class="row3">
+        <button id="btnDaily" class="btn ghost"><span>📅</span><small>Daily</small><i id="dailyDot" class="dot hidden"></i></button>
+        <button id="btnLevels" class="btn ghost"><span>🗺️</span><small>Levels</small></button>
+        <button id="btnStore" class="btn ghost"><span>✨</span><small>Store</small></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- WIN -->
+  <section id="win" class="screen hidden">
+    <div class="panel">
+      <h2 id="winTitle">ISLAND AWAKENED</h2>
+      <div id="winStars" class="stars big"><i>★</i><i>★</i><i>★</i></div>
+      <div class="win-stats"><span>Moves <b id="winMoves">0</b></span><span>Par <b id="winPar">0</b></span></div>
+      <div class="reward-line"><span class="gem">◆</span> <b id="winGems">+0</b></div>
+      <button id="btnDouble" class="btn reward">▶ Watch ad: DOUBLE gems</button>
+      <button id="btnNext" class="btn primary">NEXT ISLAND ›</button>
+      <button id="btnReplay" class="btn ghost wide">Replay for ★★★</button>
+      <button id="btnWinHome" class="btn ghost wide">Home</button>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <section id="modal" class="screen hidden">
+    <div class="panel tall">
+      <div class="modal-head"><h2 id="modalTitle"></h2><button id="modalClose" class="icon-btn">✕</button></div>
+      <div id="modalBody"></div>
+    </div>
+  </section>
+
+  <div id="toast"></div>
+  <div id="adOverlay" class="hidden">
+    <div class="adbox"><div class="adtag">AD</div><div id="adText">Ad</div>
+      <div class="adfake">Demo ad placeholder — real ads appear in the mobile app build.</div>
+      <button id="adClose" class="btn primary" disabled>…</button></div>
+  </div>
+  <div id="loading"><div class="logo">LUMINA<span>ISLES</span></div><div class="spin"></div></div>
+</div>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
